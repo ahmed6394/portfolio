@@ -4,6 +4,7 @@ import TechStack from "../components/TechStack";
 import Projects from "../components/Projects";
 import ProductionMindset from "../components/ProductionMindset";
 import MindsetSection from "../components/MindsetSection";
+import GetInTouch from "../components/GetInTouch";
 
 export default function Landing() {
   return (
@@ -14,7 +15,7 @@ export default function Landing() {
       <Projects />
       <ProductionMindset />
       <MindsetSection />
-      {/* Later: GetInTouch */}
+      <GetInTouch />
     </main>
   );
 }
