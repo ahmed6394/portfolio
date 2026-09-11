@@ -80,7 +80,14 @@ export const stackCategories = [
     label: "Cloud & Infrastructure",
     short: "Cloud",
     icon: "☁",
-    techs: ["AWS EC2", "S3", "IAM", "RDS", "EKS", "ECR", "VPC", "Terraform", "Linux"],
+    techs: ["AWS EC2", "S3", "IAM", "RDS", "EKS", "ECR", "VPC", "Linux"],
+  },
+  {
+    id: "iac",
+    label: "Infrastructure as Code",
+    short: "IaC",
+    icon: "🧱",
+    techs: ["Terraform", "Ansible"],
   },
   {
     id: "containers",
