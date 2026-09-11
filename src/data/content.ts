@@ -19,8 +19,12 @@ export const NAV_SECTIONS = [
   { id: "tech-stack", label: "Tech Stack" },
   { id: "projects", label: "Projects" },
   { id: "production-mindset", label: "Productions" },
-  { id: "mindset", label: "Mindset" },
   { id: "contact", label: "Get in Touch" },
+];
+
+export const NAV_PAGES = [
+  { path: "/blog", label: "Blog" },
+  { path: "/case-studies", label: "Case Study" },
 ];
 
 export const about = {

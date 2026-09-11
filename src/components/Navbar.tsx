@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { NAV_SECTIONS } from "../data/content";
+import { NAV_SECTIONS, NAV_PAGES } from "../data/content";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -30,24 +30,38 @@ export default function Navbar() {
         : "text-muted hover:text-primary"
     }`;
 
+  const pageLinkClass = (path: string) =>
+    `font-mono text-xs md:text-sm transition-colors ${
+      location.pathname === path ? "text-accent drop-shadow-[0_0_6px_rgba(34,211,238,0.8)]" : "text-muted hover:text-primary"
+    }`;
+
+  const sectionLinks = onLanding ? (
+    NAV_SECTIONS.map((s) => (
+      <a key={s.id} href={`#${s.id}`} className={linkClass(s.id)}>
+        {s.label}
+      </a>
+    ))
+  ) : (
+    <Link to="/" className="font-mono text-xs md:text-sm text-muted hover:text-accent">
+      ← Back to home
+    </Link>
+  );
+
+  const pageLinks = NAV_PAGES.map((p) => (
+    <Link key={p.path} to={p.path} className={pageLinkClass(p.path)}>
+      {p.label}
+    </Link>
+  ));
+
   return (
     <nav className="fixed top-0 inset-x-0 z-50 bg-base/90 backdrop-blur border-b border-accent/10">
       <div className="max-w-6xl mx-auto flex items-center justify-between px-4 h-14">
         <Link to="/" className="font-mono text-sm text-accent">
           ~/mahabub
         </Link>
-        <div className="hidden md:flex gap-6">
-          {onLanding ? (
-            NAV_SECTIONS.map((s) => (
-              <a key={s.id} href={`#${s.id}`} className={linkClass(s.id)}>
-                {s.label}
-              </a>
-            ))
-          ) : (
-            <Link to="/" className="font-mono text-sm text-muted hover:text-accent">
-              ← Back to home
-            </Link>
-          )}
+        <div className="hidden md:flex gap-4 lg:gap-6 items-center">
+          {sectionLinks}
+          {pageLinks}
         </div>
         <button
           className="md:hidden font-mono text-accent text-sm"
@@ -60,17 +74,8 @@ export default function Navbar() {
       </div>
       {open && (
         <div className="md:hidden flex flex-col gap-3 px-4 pb-4 bg-base/95 border-b border-accent/10">
-          {onLanding ? (
-            NAV_SECTIONS.map((s) => (
-              <a key={s.id} href={`#${s.id}`} className={linkClass(s.id)} onClick={() => setOpen(false)}>
-                {s.label}
-              </a>
-            ))
-          ) : (
-            <Link to="/" className="font-mono text-sm text-muted" onClick={() => setOpen(false)}>
-              ← Back to home
-            </Link>
-          )}
+          {sectionLinks}
+          {pageLinks}
         </div>
       )}
     </nav>

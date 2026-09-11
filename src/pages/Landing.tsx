@@ -3,7 +3,6 @@ import About from "../components/About";
 import TechStack from "../components/TechStack";
 import Projects from "../components/Projects";
 import ProductionMindset from "../components/ProductionMindset";
-import MindsetSection from "../components/MindsetSection";
 import GetInTouch from "../components/GetInTouch";
 
 export default function Landing() {
@@ -14,7 +13,6 @@ export default function Landing() {
       <TechStack />
       <Projects />
       <ProductionMindset />
-      <MindsetSection />
       <GetInTouch />
     </main>
   );

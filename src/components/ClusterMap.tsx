@@ -4,7 +4,9 @@ const SIZE = 640;
 const CENTER = SIZE / 2;
 const RADIUS = 240;
 
-type Props = { hovered: string | null; onHover: (id: string | null) => void };
+export type NodeHover = { id: string; x: number; y: number } | null;
+
+type Props = { hovered: string | null; onHover: (hover: NodeHover) => void };
 
 export default function ClusterMap({ hovered, onHover }: Props) {
   const nodes = stackCategories.map((c, i) => {
@@ -31,8 +33,8 @@ export default function ClusterMap({ hovered, onHover }: Props) {
       {nodes.map((n) => (
         <g
           key={n.id}
-          onMouseEnter={() => onHover(n.id)}
-          onFocus={() => onHover(n.id)}
+          onMouseEnter={() => onHover({ id: n.id, x: n.x, y: n.y })}
+          onFocus={() => onHover({ id: n.id, x: n.x, y: n.y })}
           onMouseLeave={() => onHover(null)}
           onBlur={() => onHover(null)}
           className="cursor-pointer"

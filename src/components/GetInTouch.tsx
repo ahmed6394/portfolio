@@ -7,7 +7,7 @@ export default function GetInTouch() {
   return (
     <section id="contact" className="py-24 max-w-4xl mx-auto px-4 text-center">
       <Reveal>
-        <SectionHeader index="06" title="Get in Touch" />
+        <SectionHeader index="05" title="Get in Touch" />
       </Reveal>
       <Reveal delay={0.1}>
         <p className="text-muted max-w-xl mx-auto">
