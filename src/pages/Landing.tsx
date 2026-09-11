@@ -1,11 +1,12 @@
 import Hero from "../components/Hero";
+import About from "../components/About";
 
 export default function Landing() {
   return (
     <main>
       <Hero />
-      {/* Sections added in later tasks: About, TechStack, Projects,
-          ProductionMindset, MindsetSection, GetInTouch */}
+      <About />
+      {/* Later: TechStack, Projects, ProductionMindset, MindsetSection, GetInTouch */}
     </main>
   );
 }
