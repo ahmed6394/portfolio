@@ -1,6 +1,7 @@
 import Hero from "../components/Hero";
 import About from "../components/About";
 import TechStack from "../components/TechStack";
+import Projects from "../components/Projects";
 
 export default function Landing() {
   return (
@@ -8,7 +9,8 @@ export default function Landing() {
       <Hero />
       <About />
       <TechStack />
-      {/* Later: Projects, ProductionMindset, MindsetSection, GetInTouch */}
+      <Projects />
+      {/* Later: ProductionMindset, MindsetSection, GetInTouch */}
     </main>
   );
 }
