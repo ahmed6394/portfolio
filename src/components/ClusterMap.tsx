@@ -54,7 +54,7 @@ export default function ClusterMap({ hovered, onHover }: Props) {
             fill={hovered === n.id ? "#22d3ee" : "#8b98a9"}
             fontFamily="'JetBrains Mono', monospace"
           >
-            {n.label}
+            {n.short}
           </text>
         </g>
       ))}
