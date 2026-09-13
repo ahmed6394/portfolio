@@ -5,6 +5,7 @@ import Landing from "./pages/Landing";
 import ProjectDetail from "./pages/ProjectDetail";
 import Blog from "./pages/Blog";
 import CaseStudies from "./pages/CaseStudies";
+import CaseStudyDetail from "./pages/CaseStudyDetail";
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
         <Route path="/projects/:slug" element={<ProjectDetail />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/case-studies" element={<CaseStudies />} />
+        <Route path="/case-studies/:slug" element={<CaseStudyDetail />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
       <Footer />
