@@ -57,6 +57,16 @@ export default function Hero() {
           >
             GitHub
           </a>
+          <a
+            href={personalInfo.cvUrl}
+            download
+            target="_blank"
+            rel="noreferrer noopener"
+            aria-label="Download Mahabub Ahmed's CV (PDF)"
+            className="font-mono text-sm border border-accent text-accent px-4 py-2 rounded hover:bg-accent hover:text-base transition-colors shadow-glow"
+          >
+            CV ↓
+          </a>
         </motion.div>
 
         <motion.div
