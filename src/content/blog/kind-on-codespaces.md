@@ -49,6 +49,8 @@ Keep this picture in mind. Everything below is one of these two things failing.
 The default Codespace universal image already ships Docker and kubectl, so the only missing tool is kind. One gotcha: Codespaces can run on **x86_64 or ARM (aarch64)** machines, so the installer must detect the architecture:
 
 ```bash
+#!/bin/bash
+
 # ----------------------------
 #  Install Kind (based on architecture)
 # ----------------------------
