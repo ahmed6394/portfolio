@@ -2,7 +2,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import { personalInfo } from "../data/content";
 import StatusPill from "./StatusPill";
 
-export default function Hero() {
+export default function Hero({ onOpenCV }: { onOpenCV: () => void }) {
   const reduce = useReducedMotion();
   const fade = (delay: number) =>
     reduce
@@ -57,16 +57,14 @@ export default function Hero() {
           >
             GitHub
           </a>
-          <a
-            href={personalInfo.cvUrl}
-            download
-            target="_blank"
-            rel="noreferrer noopener"
-            aria-label="Download Mahabub Ahmed's CV (PDF)"
-            className="font-mono text-sm border border-accent text-accent px-4 py-2 rounded hover:bg-accent hover:text-base transition-colors shadow-glow"
+          <button
+            type="button"
+            onClick={onOpenCV}
+            aria-label="View Mahabub Ahmed's CV (PDF) with download enabled"
+            className="font-mono text-sm border border-accent text-accent px-4 py-2 rounded hover:bg-accent hover:text-base transition-colors shadow-glow cursor-pointer"
           >
             CV ↓
-          </a>
+          </button>
         </motion.div>
 
         <motion.div

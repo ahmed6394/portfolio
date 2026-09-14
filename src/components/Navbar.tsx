@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { NAV_SECTIONS, NAV_PAGES, personalInfo } from "../data/content";
+import { NAV_SECTIONS, NAV_PAGES } from "../data/content";
 
-export default function Navbar() {
+export default function Navbar({ onOpenCV }: { onOpenCV: () => void }) {
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState("");
   const location = useLocation();
@@ -54,17 +54,15 @@ export default function Navbar() {
   ));
 
   const cvLink = (
-    <a
+    <button
       key="cv"
-      href={personalInfo.cvUrl}
-      download
-      target="_blank"
-      rel="noreferrer noopener"
-      aria-label="Download Mahabub Ahmed's CV (PDF)"
-      className="font-mono text-xs md:text-sm text-muted hover:text-accent transition-colors"
+      type="button"
+      onClick={onOpenCV}
+      aria-label="View Mahabub Ahmed's CV (PDF)"
+      className="font-mono text-xs md:text-sm text-muted hover:text-accent transition-colors cursor-pointer"
     >
       CV ↓
-    </a>
+    </button>
   );
 
   return (

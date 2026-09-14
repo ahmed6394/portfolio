@@ -5,10 +5,10 @@ import Projects from "../components/Projects";
 import ProductionMindset from "../components/ProductionMindset";
 import GetInTouch from "../components/GetInTouch";
 
-export default function Landing() {
+export default function Landing({ onOpenCV }: { onOpenCV: () => void }) {
   return (
     <main>
-      <Hero />
+      <Hero onOpenCV={onOpenCV} />
       <About />
       <TechStack />
       <Projects />
