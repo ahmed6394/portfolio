@@ -160,15 +160,15 @@ export const projects: Project[] = [
     slug: "cloud-native-platform",
     name: "Cloud-Native Application Deployment Platform",
     tagline: "Full-stack app deployed on AWS EKS with fully reproducible infrastructure.",
-    chips: ["Angular", "FastAPI", "Kubernetes", "Terraform"],
-    githubUrl: "https://github.com/TODO-REPLACE/cloud-native-platform", // TODO: replace
+    chips: ["Angular", "FastAPI", "Kubernetes", "Helm", "Terraform", "GitHub Actions", "Grafana", "Prometheus"],
+    githubUrl: "https://github.com/ahmed6394/task-manager/",
   },
   {
     slug: "incident-management-platform",
     name: "DevOps Incident Management Platform",
     tagline: "Containerized full-stack app with automated quality gates and security scanning.",
-    chips: ["React", "Node.js", "Docker Compose", "GitHub Actions"],
-    githubUrl: "https://github.com/TODO-REPLACE/incident-management-platform", // TODO: replace
+    chips: ["React", "Node.js", "Docker Compose", "GitHub Actions", "SonarQube", "Trivy", "Kubernetes", "ArgoCD"],
+    githubUrl: "https://github.com/ahmed6394/devops-incedent-app",
   },
 ];
 

@@ -1,0 +1,24 @@
+# Mahabub Ahmed — Cloud & DevOps Engineer
+
+Portfolio of Mahabub Ahmed, Cloud &amp; DevOps Engineer in Heilbronn, Germany.
+AWS, Kubernetes, Terraform, CI/CD automation, and production-grade infrastructure.
+
+## Pages
+
+- [Home](https://TODO-REPLACE.netlify.app/): About, tech stack cluster map, projects, production mindset, contact
+- [Blog](https://TODO-REPLACE.netlify.app/blog): Technical write-ups on Kubernetes and cloud infrastructure
+- [Case Studies](https://TODO-REPLACE.netlify.app/case-studies): Infrastructure deep-dives with architecture decisions and trade-offs
+
+## Blog Posts
+
+- [kind on GitHub Codespaces — a Free Kubernetes Lab](https://TODO-REPLACE.netlify.app/blog/kind-on-codespaces): Building a free Kubernetes lab and fixing the ImagePullBackOff trap
+
+## Case Studies
+
+- [Monolith-to-Microservices Migration](https://TODO-REPLACE.netlify.app/case-studies/monolith-to-microservices): E-commerce scale-out to AWS EKS
+- [Immutable Infrastructure & Disaster Recovery](https://TODO-REPLACE.netlify.app/case-studies/immutable-infrastructure-dr): Fintech immutable-infrastructure overhaul
+
+## Contact
+
+- Email: ahmed.mahabub.063@gmail.com
+- Location: Heilbronn, Germany (open to remote)

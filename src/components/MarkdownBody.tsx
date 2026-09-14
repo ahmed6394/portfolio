@@ -1,5 +1,6 @@
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import rehypeHighlight from "rehype-highlight";
 import type { ReactNode } from "react";
 
 type Props = { content: string };
@@ -8,6 +9,7 @@ export default function MarkdownBody({ content }: Props) {
   return (
     <ReactMarkdown
       remarkPlugins={[remarkGfm]}
+      rehypePlugins={[rehypeHighlight]}
       components={{
         h1: ({ children }) => (
           <h1 className="font-heading text-3xl md:text-4xl font-bold mt-10 mb-6">{children as ReactNode}</h1>
@@ -36,7 +38,9 @@ export default function MarkdownBody({ content }: Props) {
           const isBlock = /language-/.test(className ?? "");
           if (isBlock) {
             return (
-              <code className="font-mono text-sm block leading-relaxed">{children as ReactNode}</code>
+              <code className={`hljs font-mono text-sm block leading-relaxed ${className ?? ""}`}>
+                {children as ReactNode}
+              </code>
             );
           }
           return (
@@ -73,7 +77,12 @@ export default function MarkdownBody({ content }: Props) {
           />
         ),
         a: ({ href, children }) => (
-          <a href={href} className="text-accent hover:underline" target="_blank" rel="noreferrer noopener">
+          <a
+            href={href}
+            className="text-accent underline decoration-accent/40 hover:decoration-accent hover:underline"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
             {children as ReactNode}
           </a>
         ),
