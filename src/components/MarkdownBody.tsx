@@ -72,7 +72,7 @@ export default function MarkdownBody({ content }: Props) {
           <img
             src={typeof src === "string" ? src : undefined}
             alt={alt ?? ""}
-            className="rounded-lg border border-accent/20 shadow-glow max-w-full my-6 mx-auto block"
+            className="max-w-full max-h-[75vh] h-auto w-auto object-contain rounded-lg border border-accent/20 shadow-glow my-6 mx-auto block"
             loading="lazy"
           />
         ),
