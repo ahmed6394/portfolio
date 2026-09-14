@@ -10,6 +10,7 @@ export const personalInfo = {
   phone: "+49 1521 5137473",
   linkedin: "https://linkedin.com/in/TODO-REPLACE", // TODO: replace with real LinkedIn URL
   github: "https://github.com/TODO-REPLACE", // TODO: replace with real GitHub URL
+  cvUrl: "/Mahabub_Ahmed_CV.pdf",
   status: "open to work",
   languages: ["English — Fluent", "German — B1 (learning)", "Bengali — Native"],
 };

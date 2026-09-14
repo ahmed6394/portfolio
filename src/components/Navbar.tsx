@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { NAV_SECTIONS, NAV_PAGES } from "../data/content";
+import { NAV_SECTIONS, NAV_PAGES, personalInfo } from "../data/content";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -53,6 +53,20 @@ export default function Navbar() {
     </Link>
   ));
 
+  const cvLink = (
+    <a
+      key="cv"
+      href={personalInfo.cvUrl}
+      download
+      target="_blank"
+      rel="noreferrer noopener"
+      aria-label="Download Mahabub Ahmed's CV (PDF)"
+      className="font-mono text-xs md:text-sm text-muted hover:text-accent transition-colors"
+    >
+      CV ↓
+    </a>
+  );
+
   return (
     <nav className="fixed top-0 inset-x-0 z-50 bg-base/90 backdrop-blur border-b border-accent/10">
       <div className="max-w-6xl mx-auto flex items-center justify-between px-4 h-14">
@@ -62,6 +76,7 @@ export default function Navbar() {
         <div className="hidden md:flex gap-4 lg:gap-6 items-center">
           {sectionLinks}
           {pageLinks}
+          {cvLink}
         </div>
         <button
           className="md:hidden font-mono text-accent text-sm"
@@ -76,6 +91,7 @@ export default function Navbar() {
         <div className="md:hidden flex flex-col gap-3 px-4 pb-4 bg-base/95 border-b border-accent/10">
           {sectionLinks}
           {pageLinks}
+          {cvLink}
         </div>
       )}
     </nav>
