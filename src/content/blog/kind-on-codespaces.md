@@ -33,27 +33,7 @@ By the end you'll have three files in your repo:
 
 A GitHub Codespace is itself a **Docker container running on an Azure VM**. When you run Docker inside it (Docker-in-Docker), and kind on top of that, you get containers within containers:
 
-```
-┌──────────────────────────────────────────────────┐
-│ Azure VM (GitHub-hosted)                         │
-│  ┌────────────────────────────────────────────┐  │
-│  │ Codespace container (your "machine")       │  │
-│  │                                            │  │
-│  │  ┌──────────────────────────────────────┐  │  │
-│  │  │ kind node = Docker container         │  │  │
-│  │  │ (runs containerd, kubelet, pods)     │  │  │
-│  │  └───────────────┬──────────────────────┘  │  │
-│  │                  │                         │  │
-│  │          br-xxxx  (the "kind" bridge)      │  │
-│  │                  │                         │  │
-│  │        Docker daemon (DinD) + iptables     │  │
-│  └──────────────────┼─────────────────────────┘  │
-│                     │ NAT                        │
-│         Azure DNS: 168.63.129.16                 │
-└─────────────────────┼────────────────────────────┘
-                      ▼
-            registry-1.docker.io
-```
+![Anatomy of the container nesting](/blog/anatomy.png)
 
 Two consequences of this nesting cause all our pain:
 
