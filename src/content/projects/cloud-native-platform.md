@@ -100,16 +100,7 @@ Three sequential jobs on push to `main`:
 
 A full stack of **Prometheus**, **Node Exporter**, **Blackbox Exporter**, and **Grafana**:
 
-```
-                     Grafana Dashboards
-                            │
-                        Prometheus
-                            │
-        ┌───────────────┬────┴────┬───────────────┐
-        │               │         │               │
- Node Exporter    Blackbox     Application     Prometheus
- Host Metrics     Probes       Metrics         Targets
-```
+![Monitoring & Observability architecture](/projects/monitoring&observability.png)
 
 - **Infrastructure** — Node Exporter: CPU, memory, disk, network, load
 - **Endpoints & uptime** — Blackbox: HTTP status, response time, DNS, SSL validity
