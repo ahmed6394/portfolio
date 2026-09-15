@@ -2,7 +2,7 @@
 title: kind on GitHub Codespaces — a Free Kubernetes Lab
 summary: A free, browser-reachable Kubernetes playground on Codespaces — and why every pod hits ImagePullBackOff until you fix stale iptables rules and node DNS.
 tags: [Kubernetes, kind, Codespaces, DevOps]
-date: 2026-09
+date: 2026-09-01
 ---
 
 # Running kind on GitHub Codespaces: Building a Free Kubernetes Lab (and Fixing the ImagePullBackOff Trap)
