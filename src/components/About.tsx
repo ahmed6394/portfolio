@@ -62,8 +62,19 @@ export default function About() {
               <div key={ed.school} className="border-l-2 border-accent/40 pl-4">
                 <p className="font-heading font-semibold">{ed.program}</p>
                 <p className="font-mono text-xs text-accent">
-                  {ed.school} · {ed.period}
+                  {ed.school}
+                  {ed.periodOnNewLine ? (
+                    <>
+                      <br />
+                      {ed.period}
+                    </>
+                  ) : (
+                    ` · ${ed.period}`
+                  )}
                 </p>
+                {ed.note && (
+                  <p className="font-mono text-xs text-muted mt-1">{ed.note}</p>
+                )}
               </div>
             ))}
           </div>

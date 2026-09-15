@@ -3,15 +3,17 @@
 
 export const personalInfo = {
   name: "Mahabub Ahmed",
-  role: "Cloud & DevOps Engineer",
+  role: "Software Engineer",
+  focus: "Cloud and DevOps",
   tagline: "I build automated, observable, production-ready cloud infrastructure.",
   location: "Heilbronn, Germany",
   email: "ahmed.mahabub.063@gmail.com",
   phone: "+49 1521 5137473",
-  linkedin: "https://linkedin.com/in/TODO-REPLACE", // TODO: replace with real LinkedIn URL
-  github: "https://github.com/TODO-REPLACE", // TODO: replace with real GitHub URL
+  linkedin: "https://www.linkedin.com/in/mahabub-ahmed/",
+  github: "https://github.com/ahmed6394",
   cvUrl: "/Mahabub_Ahmed_CV.pdf",
   status: "open to work",
+  preference: "On-site · Hybrid · Remote",
   languages: ["English — Fluent", "German — B1 (learning)", "Bengali — Native"],
 };
 
@@ -64,14 +66,22 @@ export const experience = [
 
 export const education = [
   {
-    school: "42 Heilbronn gGmbH, Germany",
+    school: "42 Heilbronn, Germany",
     program: "Software Engineering Program",
     period: "Oct 2024 — Oct 2026",
   },
   {
+    school: "International University of Applied Sciences",
+    program: "MBA — IT Management",
+    period: "Oct 2021 — Mar 2024",
+    periodOnNewLine: true,
+    note: "deregistered — pivoted to software engineering",
+  },
+  {
     school: "Ahsanullah University of Science & Technology (AUST)",
     program: "B.Sc. in Electrical & Electronic Engineering",
-    period: "Graduated Dec 2017",
+    period: "Graduated May 2017",
+    periodOnNewLine: true,
   },
 ];
 

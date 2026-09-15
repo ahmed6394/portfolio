@@ -57,7 +57,7 @@ date: 2026-09
 *   **Role:** Automated OS Provisioning & "Image Baking".
 *   **Implementation Details:**
     *   Ansible playbooks execute during image construction (using HashiCorp Packer or AWS Image Builder) on temporary build instances.
-    *   Playbooks execute idempotently to update OS packages, install runtime dependencies (e.g., Python, Docker, monitoring agents), configure system systemd services, and remove build-time temporary files/ssh keys.
+    *   Playbooks execute idempotently to update OS packages, install runtime dependencies (e.g., Python, Docker, monitoring agents), configure systemd services, and remove build-time temporary files/ssh keys.
 
 ```yaml
 # Example Ansible Playbook Excerpt for OS Hardening

@@ -1,7 +1,7 @@
 ---
 title: Cloud-Native Application Deployment Platform
-subtitle: Full-stack Todo List
-summary: A full-stack Todo list app — Angular + FastAPI + Postgres — containerized, deployed on Kubernetes via Helm, provisioned on AWS with Terraform, delivered by GitHub Actions CI/CD, and observed with Prometheus/Grafana.
+subtitle: Full-stack Task Manager
+summary: A full-stack Task Manager app — Angular + FastAPI + Postgres — containerized, deployed on Kubernetes via Helm, provisioned on AWS with Terraform, delivered by GitHub Actions CI/CD, and observed with Prometheus/Grafana.
 tags: [Angular, FastAPI, Kubernetes, Helm, Terraform, GitHub Actions, Grafana, Prometheus]
 ---
 
@@ -102,26 +102,24 @@ A full stack of **Prometheus**, **Node Exporter**, **Blackbox Exporter**, and **
 
 ![Monitoring & Observability architecture](/projects/monitoring&observability.png)
 
-- **Infrastructure** — Node Exporter: CPU, memory, disk, network, load
-- **Endpoints & uptime** — Blackbox: HTTP status, response time, DNS, SSL validity
-- **Verification** — Prometheus target health: exporters up, scrapes successful
+• **Infrastructure**: Node Exporter: CPU, memory, disk, network, load
 
-![Node Exporter Dashboard](https://i.ibb.co/tM1kD1XV/node-exporter-cpu-mem-traffic-dashboard.png)
+  ![Node Exporter Dashboard](https://i.ibb.co/tM1kD1XV/node-exporter-cpu-mem-traffic-dashboard.png)
 
-![Blackbox Exporter Dashboard](https://i.ibb.co/v4KFXLDD/blackbox-dashboards-fullpage.png)
+• **Endpoints & uptime**: Blackbox: HTTP status, response time, DNS, SSL validity
 
-![Prometheus Targets](https://i.ibb.co/zT4H918x/prometheus.png)
+  ![Blackbox Exporter Dashboard](https://i.ibb.co/v4KFXLDD/blackbox-dashboards-fullpage.png)
 
-### Operational benefits
+• **Verification**: Prometheus target health: exporters up, scrapes successful
 
-✅ Real-time infrastructure visibility
+  ![Prometheus Targets](https://i.ibb.co/zT4H918x/prometheus.png)
 
-✅ Early detection of service degradation
+### Operational impact
 
-✅ Endpoint uptime monitoring
-
-✅ SSL certificate expiration tracking
-
-✅ Performance baseline establishment
-
-✅ Faster troubleshooting and incident response
+| Tool | What it delivers |
+|------|-----------------|
+| **Docker** | Reproducible environments — same container runs locally, in CI, and in production. Multi-stage builds cut image size from ~900 MB to ~150 MB. |
+| **Helm** | Templated Kubernetes manifests — one chart deploys frontend, backend, and Postgres with secrets, resource limits, and ingress wired automatically. |
+| **Terraform** | Entire AWS footprint (EKS, RDS, ECR, IAM) reproducible from source. `terraform destroy` + `terraform apply` rebuilds the stack in under 10 minutes. |
+| **GitHub Actions** | Push to `main` triggers test → build → deploy. OIDC auth means zero static AWS keys in the pipeline. |
+| **Prometheus + Grafana** | Real-time visibility into infrastructure health, endpoint uptime, SSL validity, and response times — before users notice. |

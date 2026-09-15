@@ -94,11 +94,13 @@ Kubernetes manifests are GitOps-managed — ArgoCD watches the repository and sy
 
 ---
 
-## Operational notes
+## Operational impact
 
-- The backend waits for PostgreSQL to become healthy before starting
-- Health checks are defined for the major services to support orchestration reliability
-- Container images are built locally and published to a registry from CI
-- Named Docker volumes preserve database state between restarts unless explicitly removed
-
-This project is a compact but realistic example of DevOps engineering in practice — application delivery, containerization, automation, security, testing, and release workflow all live in one repository.
+| Tool | What it delivers |
+|------|-----------------|
+| **Docker Compose** | One command brings up the full stack (frontend, backend, Postgres) with health checks and named volumes; database state survives restarts. |
+| **GitHub Actions** | Push to `main` triggers build → SonarQube → Trivy → smoke test → publish, with `sha-<commit>` image tags for reproducibility. |
+| **SonarQube** | Quality gates catch bugs, security hotspots, and code smells before they reach the release path. |
+| **Trivy** | Container images are scanned automatically; CRITICAL/HIGH findings fail the build, so vulnerable images never get published. |
+| **Smoke tests** | The real stack is started, verified, and torn down in CI — proving frontend, backend, and API flows actually work. |
+| **ArgoCD** | GitOps sync keeps the cluster at the declared state; every deploy is auditable and rollback-ready. |

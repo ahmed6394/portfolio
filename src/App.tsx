@@ -1,5 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
+import ScrollToTop from "./components/ScrollToTop";
+import BackToTop from "./components/BackToTop";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import CVModal from "./components/CVModal";
@@ -12,8 +14,19 @@ import CaseStudyDetail from "./pages/CaseStudyDetail";
 
 export default function App() {
   const [cvOpen, setCvOpen] = useState(false);
+  useEffect(() => {
+    try {
+      if (sessionStorage.getItem("visit-logged")) return;
+      sessionStorage.setItem("visit-logged", "1");
+      fetch("/.netlify/functions/log-visit", { method: "GET" }).catch(() => {});
+    } catch {
+      /* sessionStorage unavailable → skip */
+    }
+  }, []);
   return (
     <div className="min-h-screen bg-base text-primary">
+      <ScrollToTop />
+      <BackToTop />
       <Navbar onOpenCV={() => setCvOpen(true)} />
       {cvOpen && <CVModal onClose={() => setCvOpen(false)} />}
       <Routes>

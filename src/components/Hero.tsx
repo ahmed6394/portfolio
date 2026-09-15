@@ -1,6 +1,7 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { personalInfo } from "../data/content";
 import StatusPill from "./StatusPill";
+import CopyEmailButton from "./CopyEmailButton";
 
 export default function Hero({ onOpenCV }: { onOpenCV: () => void }) {
   const reduce = useReducedMotion();
@@ -35,17 +36,12 @@ export default function Hero({ onOpenCV }: { onOpenCV: () => void }) {
         </motion.p>
 
         <motion.div {...fade(0.6)} className="mt-8 flex flex-wrap justify-center gap-3">
-          <a
-            href={`mailto:${personalInfo.email}`}
-            className="font-mono text-sm border border-accent text-accent px-4 py-2 rounded hover:bg-accent hover:text-base transition-colors shadow-glow"
-          >
-            Email
-          </a>
+          <CopyEmailButton variant="hero" />
           <a
             href={personalInfo.linkedin}
             target="_blank"
             rel="noreferrer noopener"
-            className="font-mono text-sm border border-accent/40 text-muted px-4 py-2 rounded hover:border-accent hover:text-accent transition-colors"
+            className="font-mono text-sm border border-accent text-accent px-4 py-2 rounded hover:bg-accent hover:text-base transition-colors shadow-glow"
           >
             LinkedIn
           </a>
@@ -53,7 +49,7 @@ export default function Hero({ onOpenCV }: { onOpenCV: () => void }) {
             href={personalInfo.github}
             target="_blank"
             rel="noreferrer noopener"
-            className="font-mono text-sm border border-accent/40 text-muted px-4 py-2 rounded hover:border-accent hover:text-accent transition-colors"
+            className="font-mono text-sm border border-accent text-accent px-4 py-2 rounded hover:bg-accent hover:text-base transition-colors shadow-glow"
           >
             GitHub
           </a>
@@ -80,6 +76,9 @@ export default function Hero({ onOpenCV }: { onOpenCV: () => void }) {
           </p>
           <p className="mt-1">
             status: <span className="text-accent">{personalInfo.status}</span>
+          </p>
+          <p className="mt-1">
+            preference: <span className="text-accent">{personalInfo.preference}</span>
           </p>
         </motion.div>
       </div>
