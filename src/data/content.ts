@@ -5,7 +5,7 @@ export const personalInfo = {
   name: "Mahabub Ahmed",
   role: "Software Engineer",
   focus: "Cloud and DevOps",
-  tagline: "I build automated, observable, production-ready cloud infrastructure.",
+  tagline: "I build Cloud and DevOps infrastructure that's automated, observable, and production-ready.",
   location: "Heilbronn, Germany",
   email: "ahmed.mahabub.063@gmail.com",
   phone: "+49 1521 5137473",
@@ -32,7 +32,7 @@ export const NAV_PAGES = [
 
 export const about = {
   intro:
-    "Cloud and DevOps-focused Software Engineer with hands-on experience in AWS, Kubernetes, Terraform, Docker, and CI/CD automation. Currently working remotely as a Software Engineering Intern at PixScrib, contributing to deployment automation and production support. I moved from electrical engineering into cloud engineering — and that systems thinking is my edge: I treat infrastructure like a circuit, where every component must be reliable, observable, and designed to fail safely.",
+    "Cloud and DevOps-focused Software Engineer with hands-on experience in AWS, Kubernetes, Terraform, Docker, and CI/CD automation. Currently working remotely as a Software Engineering Intern at PixScrib, contributing to deployment automation and production support. I moved from electrical engineering into cloud engineering — and that systems thinking is my edge: I treat infrastructure like a circuit, where every component must be reliable, observable, and designed to fail safely. I build with AI where it helps — agents and LLM tooling to write IaC, wire up CI/CD, and triage production faster — always behind the same review gates.",
   highlights: [
     { label: "Location", value: "Heilbronn, Germany" },
     { label: "Status", value: "Open to Cloud / DevOps / Platform roles" },
@@ -51,6 +51,7 @@ export const experience = [
       "Implemented GitHub webhook integrations for automated development and deployment workflows.",
       "Automated deployment workflows, improving release consistency and reducing manual effort.",
       "Supported monitoring, troubleshooting, and production operations to improve reliability.",
+      "Use AI coding agents (e.g. OpenCode) in daily development to accelerate implementation and reduce toil.",
     ],
   },
   {
@@ -213,6 +214,11 @@ export const productionMindset = [
     icon: "🧪",
     title: "Small, safe changes",
     line: "Smoke tests, health checks, and staged releases — momentum without meltdowns.",
+  },
+  {
+    icon: "⚡",
+    title: "AI-augmented engineering",
+    line: "I use AI agents and LLMs to move faster on infra and ops — with strict reviews so speed never trades away reliability.",
   },
 ];
 
