@@ -109,9 +109,7 @@ committed to this repository.
 
 The six-job pipeline on `main`, green end to end.
 
-<img src="https://i.ibb.co/kVVY5PZp/Screenshot-2026-09-29-052255.png"
-     alt="GitHub Actions run for DevOps Circle CI/CD on main, showing the tests, security, changes, docker, gitops, and cd-verify jobs all completing successfully"
-     width="900">
+![GitHub Actions run for DevOps Circle CI/CD on main, showing the tests, security, changes, docker, gitops, and cd-verify jobs all completing successfully](https://i.ibb.co/kVVY5PZp/Screenshot-2026-09-29-052255.png)
 
 ### GitOps — ArgoCD
 
@@ -119,17 +117,13 @@ The `devops-circle` application reconciled from `k8s/overlays/prod`. The
 revision in the `Revision` column is the same commit SHA as the CI run above,
 which is what makes the deployment traceable end to end.
 
-<img src="https://i.ibb.co/nsZY8hLV/Screenshot-2026-09-29-045054.png"
-     alt="ArgoCD application list showing devops-circle as Synced and Healthy, with the deployed revision matching the commit SHA from the CI run"
-     width="900">
+![ArgoCD application list showing devops-circle as Synced and Healthy, with the deployed revision matching the commit SHA from the CI run](https://i.ibb.co/nsZY8hLV/Screenshot-2026-09-29-045054.png)
 
 ### Cluster state
 
 Pods, deployments, and services on the k3s cluster behind the ingress.
 
-<img src="https://i.ibb.co/pqTSqD7/Screenshot-2026-09-29-051948.png"
-     alt="kubectl output showing pods, deployments, and services in the devops-circle namespace, all Running"
-     width="900">
+![kubectl output showing pods, deployments, and services in the devops-circle namespace, all Running](https://i.ibb.co/pqTSqD7/Screenshot-2026-09-29-051948.png)
 
 ### Metrics — Grafana
 
@@ -139,35 +133,27 @@ and worker throughput are first-class because post creation is asynchronous by
 design — `post-service` enqueues to Redis and returns immediately, and
 `worker-service` drains the queue.
 
-<img src="https://i.ibb.co/5XtbFXC3/Screenshot-2026-09-29-045008.png"
-     alt="Grafana dashboard with request rate, latency, and Redis queue depth panels sourced from the services' own devops_circle Prometheus metrics"
-     width="900">
+![Grafana dashboard with request rate, latency, and Redis queue depth panels sourced from the services' own devops_circle Prometheus metrics](https://i.ibb.co/5XtbFXC3/Screenshot-2026-09-29-045008.png)
 
 ### Scrape targets — Prometheus
 
 All 21 scrape targets up, including cAdvisor, which needed adjusting for k3s and
 containerd rather than Docker.
 
-<img src="https://i.ibb.co/xtzdgB8q/Screenshot-2026-09-29-045021.png"
-     alt="Prometheus targets page showing all 21 active scrape targets up, including the application ServiceMonitors and cAdvisor"
-     width="900">
+![Prometheus targets page showing all 21 active scrape targets up, including the application ServiceMonitors and cAdvisor](https://i.ibb.co/xtzdgB8q/Screenshot-2026-09-29-045021.png)
 
 ### Pipeline notification — SMTP
 
 The `notify` job runs last regardless of outcome and emails the result.
 
-<img src="https://i.ibb.co/HpNkf7jj/Screenshot-2026-09-29-122613.png"
-     alt="SMTP server response confirming delivery of the CI/CD pipeline completion email"
-     width="900">
+![SMTP server response confirming delivery of the CI/CD pipeline completion email](https://i.ibb.co/HpNkf7jj/Screenshot-2026-09-29-122613.png)
 
 ### The application
 
 Eight containers behind the Nginx gateway: a React frontend, six FastAPI
 services, and an asynchronous worker, on PostgreSQL and Redis.
 
-<img src="https://i.ibb.co/FbwFPVqy/Screenshot-2026-09-29-044630.png"
-     alt="DevOps Circle home UI served through the Nginx gateway on the EC2 public IP"
-     width="900">
+![DevOps Circle home UI served through the Nginx gateway on the EC2 public IP](https://i.ibb.co/FbwFPVqy/Screenshot-2026-09-29-044630.png)
 
 ## Running it locally
 
