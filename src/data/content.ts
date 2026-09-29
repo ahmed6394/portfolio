@@ -169,6 +169,13 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "devops-circle",
+    name: "DevOps Circle",
+    tagline: "8-service microservices platform delivered end to end to k3s on AWS EC2 via CI/CD + GitOps, with metrics collected from the app's own instrumentation.",
+    chips: ["React", "FastAPI", "PostgreSQL", "Redis", "Docker", "Kubernetes (k3s)", "Kustomize", "ArgoCD", "GitHub Actions", "Terraform", "Prometheus", "Grafana"],
+    githubUrl: "https://github.com/ahmed6394/DevOps-Circle",
+  },
+  {
     slug: "cloud-native-platform",
     name: "Cloud-Native Application Deployment Platform",
     tagline: "Full-stack app deployed on AWS EKS with fully reproducible infrastructure.",
